@@ -32,3 +32,4 @@ instance/
 # Firebase local config and secrets
 .firebaserc
 serviceAccountKey.json
+node_modules/
