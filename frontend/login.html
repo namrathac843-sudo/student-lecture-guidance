@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in · Project Guidance &amp; Mentoring Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="auth-body" data-page="login">
+
+  <div class="auth-layout">
+
+    <aside class="auth-side" aria-hidden="true">
+      <a href="index.html" class="brand brand--light">
+        <span class="brand-mark">PG</span>
+        <span class="brand-text">Project&nbsp;Guidance&nbsp;&amp;&nbsp;Mentoring</span>
+      </a>
+      <h2>Welcome back.</h2>
+      <p>
+        Log in to submit projects, review submissions, or run mentoring sessions.
+        Your role determines what you see on the dashboard.
+      </p>
+      <ul class="auth-side-list">
+        <li>Students submit and track projects</li>
+        <li>Lecturers review and give feedback</li>
+        <li>Alumni mentor across the industry</li>
+        <li>Admins manage users and monitor activity</li>
+      </ul>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <header class="auth-card-head">
+          <h1>Log in</h1>
+          <p>Enter your college credentials to continue.</p>
+        </header>
+
+        <form id="login-form" novalidate autocomplete="on">
+          <div class="form-group">
+            <label for="login-email">College email address</label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              autocomplete="username"
+              required
+              placeholder="e.g. 1GA21CS001@gat.ac.in"
+            />
+            <p class="field-error" data-error-for="login-email" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="input-with-action">
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                autocomplete="current-password"
+                required
+                placeholder="Your password"
+              />
+              <button type="button" class="input-action"
+                      data-toggle-password="login-password"
+                      aria-label="Show password">Show</button>
+            </div>
+            <p class="field-error" data-error-for="login-password" role="alert"></p>
+          </div>
+
+          <div class="form-row form-row--between">
+            <label class="checkbox">
+              <input type="checkbox" id="login-remember" />
+              <span>Remember my email on this device</span>
+            </label>
+            <a href="#forgot" class="link-small" id="open-forgot">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="login-submit">
+            Log in
+          </button>
+
+          <p class="form-footer">
+            Don't have an account? <a href="register.html">Create one now</a>
+          </p>
+          <p class="form-footer"><a href="admin-login.html">Administrator sign in</a></p>
+        </form>
+
+        <section id="forgot-panel" class="forgot-panel" hidden>
+          <h2>Password reset</h2>
+          <p class="muted">Password-reset emails are not configured on this installation. Please contact the platform administrator to reset your password.</p>
+          <button type="button" class="btn btn-ghost btn-block" id="close-forgot">Back to login</button>
+        </section>
+
+        <div id="login-alert" class="alert" hidden role="alert"></div>
+      </div>
+
+      <p class="auth-footnote">
+        <a href="index.html">&larr; Back to home</a>
+      </p>
+    </main>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/deploy-config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

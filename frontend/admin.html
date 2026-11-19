@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Admin console · Project Guidance &amp; Mentoring</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="app-body" data-page="admin" data-requires-auth="true" data-admin-only="true">
+  <main class="admin-wrap">
+    <header class="admin-header">
+      <a href="admin.html" class="brand">
+        <span class="brand-mark">PG</span>
+        <span class="brand-text">Platform Admin</span>
+      </a>
+      <div class="admin-header-actions">
+        <span id="admin-user-name" class="muted">Administrator</span>
+        <button id="admin-refresh" class="btn btn-outline btn-sm" type="button">Refresh</button>
+        <button id="admin-logout" class="btn btn-ghost btn-sm" type="button">Log out</button>
+      </div>
+    </header>
+
+    <section class="admin-intro">
+      <div>
+        <p class="eyebrow">Control centre</p>
+        <h1>Account approvals</h1>
+        <p class="page-subtitle">Only approved accounts can sign in. Administrators can approve students, lecturers and alumni.</p>
+      </div>
+      <a class="btn btn-outline" href="index.html">View public site</a>
+    </section>
+
+    <div id="admin-alert" class="alert" hidden role="alert"></div>
+
+    <section class="admin-stats" aria-label="Account statistics">
+      <article class="admin-stat"><span>Total accounts</span><strong id="stat-total">—</strong></article>
+      <article class="admin-stat"><span>Awaiting approval</span><strong id="stat-pending">—</strong></article>
+      <article class="admin-stat"><span>Approved</span><strong id="stat-approved">—</strong></article>
+      <article class="admin-stat"><span>Not approved</span><strong id="stat-rejected">—</strong></article>
+    </section>
+
+    <section class="admin-card">
+      <header class="admin-card-header">
+        <div>
+          <h2>Pending registration requests</h2>
+          <p class="muted">Approve or reject each account request. Decisions are enforced by the server.</p>
+        </div>
+        <label class="admin-filter">Role
+          <select id="admin-role-filter">
+            <option value="all">All roles</option>
+            <option value="student">Students</option>
+            <option value="lecturer">Lecturers</option>
+            <option value="alumni">Alumni</option>
+          </select>
+        </label>
+      </header>
+      <div class="table-scroll">
+        <table class="admin-table">
+          <thead><tr><th>Name</th><th>Email / ID</th><th>Role</th><th>Department</th><th>Requested</th><th>Action</th></tr></thead>
+          <tbody id="admin-pending-body"><tr><td colspan="6" class="empty-cell">Loading requests…</td></tr></tbody>
+        </table>
+      </div>
+      <p id="admin-empty" class="empty-state" hidden>No pending registration requests.</p>
+    </section>
+
+    <footer class="admin-footer">Project Guidance &amp; Mentoring Platform · Administrator console</footer>
+  </main>
+  <script src="js/storage.js"></script>
+  <script src="js/deploy-config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

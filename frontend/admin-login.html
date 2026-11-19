@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Administrator sign in · Project Guidance &amp; Mentoring</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="auth-body" data-page="admin-login">
+  <div class="auth-layout">
+    <aside class="auth-side">
+      <a href="index.html" class="brand brand--light">
+        <span class="brand-mark">PG</span>
+        <span class="brand-text">Project Guidance &amp; Mentoring</span>
+      </a>
+      <h2>Administrator portal.</h2>
+      <p>Review account requests and manage who can access the platform.</p>
+      <ul class="auth-side-list">
+        <li>Approve student and lecturer registrations</li>
+        <li>Review pending accounts before sign-in</li>
+        <li>Track decisions made by administrators</li>
+      </ul>
+    </aside>
+    <main class="auth-main">
+      <div class="auth-card">
+        <header class="auth-card-head">
+          <p class="eyebrow">Restricted access</p>
+          <h1>Administrator sign in</h1>
+          <p>Use the administrator account created by the server operator.</p>
+        </header>
+        <form id="login-form" novalidate autocomplete="on">
+          <div class="form-group">
+            <label for="login-email">Administrator email</label>
+            <input type="email" id="login-email" name="email" required autocomplete="username" />
+            <p class="field-error" data-error-for="login-email" role="alert"></p>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <div class="input-with-action">
+              <input type="password" id="login-password" name="password" required autocomplete="current-password" />
+              <button type="button" class="input-action" data-toggle-password="login-password">Show</button>
+            </div>
+            <p class="field-error" data-error-for="login-password" role="alert"></p>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="login-submit">Log in as administrator</button>
+        </form>
+        <div id="login-alert" class="alert" hidden role="alert"></div>
+        <p class="form-footer"><a href="login.html">Return to regular sign in</a></p>
+      </div>
+      <p class="auth-footnote"><a href="index.html">&larr; Back to home</a></p>
+    </main>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/deploy-config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
